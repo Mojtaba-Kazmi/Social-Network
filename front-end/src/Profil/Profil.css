@@ -1,0 +1,104 @@
+.Page-bloc {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.Profil {
+    text-align: center;
+}
+
+.Profil-img{
+    border: solid 1px #204f61;;
+    padding: 20px 20px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.Photo-profil{
+    width: 200px;
+    padding-bottom: 20px;
+}
+
+.Profil-bloc {
+    display: grid;
+    grid-template-columns: 300px 200px;
+    margin: 40px auto 10px auto;
+}
+
+.Profil-text{
+    padding-left: 40px;
+}
+
+.Profil-p {
+    text-align: left;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.Profil-upload {
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    border: solid 1px #204f61;;
+    
+    background-color: #204f61;;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.Profil-delete {
+    cursor: pointer;
+    margin: 10px;
+    border: solid 1px #204f61;;
+    background-color: #204f61;;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Profil-upload:focus {
+    border: solid 1px #204f61;;
+    background-color: #fff;
+    color: #204f61;;
+}
+
+.Profil-delete:focus {
+    border: solid 1px #204f61;;
+    background-color: #fff;
+    color: #204f61;;
+}
+
+@media screen and (max-width: 768px) 
+{
+    .Page-bloc {
+        grid-template-columns: repeat(1,1fr);
+        margin: 0;
+    }
+
+    .Profil-bloc {
+        grid-template-columns: repeat(1,1fr);
+        width: 100%;
+    }
+
+    .Profil-img {
+        margin: 0 20px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width: 1024px)
+{
+    .Page-bloc {
+        grid-template-columns: 300px 1fr;
+        margin-right: 0;
+    }
+
+    .Profil-img {
+        margin: 0 20px;
+    }
+}

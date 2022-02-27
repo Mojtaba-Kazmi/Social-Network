@@ -1,0 +1,157 @@
+.Message-text {
+    border: solid 1px #204f61;
+    color: #204f61;
+    text-align: center;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    position: relative;
+}
+
+.Message-autor{
+    font-size: 14px;
+    font-style: italic;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    margin:10px;
+}
+
+.Message-date{
+    font-size: 14px;
+    font-style: italic;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+.Icon-bloc {
+    color: #204f61;
+    margin: 0px 10px;
+}
+
+.Icon1 {
+    position: absolute;
+    bottom: 5px;
+    right: 55px;
+}
+
+.Icon2 {
+    position: absolute;
+    bottom: 5px;
+    right: 75px;
+}
+
+.Icon3 {
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+}
+
+.Icon4 {
+    position: absolute;
+    bottom: 5px;
+    right: 0px;
+}
+
+.Message-create-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Message-create-bloc {
+    border: solid 2px #204f61;
+    color: #204f61;
+    text-align: center;
+    width: 500px;
+    margin: 10px auto;
+    padding: 20px 20px;
+}
+
+.Comment-bloc {
+    position: relative;
+    border: solid 1px #204f61;
+    color: #204f61;
+    text-align: center;
+    width: 450px;
+    margin: 20px 60px;
+    padding: 20px 20px;
+}
+
+.Comment-affich {
+    margin-bottom: 20px;
+}
+
+.Comment-create{
+    border: solid 2px #204f61;
+    color: #204f61;
+    width: 500px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px 20px;
+}
+
+.Submit-comment {
+    display: block;
+    margin: 10px auto;
+}
+
+.Submit-message {
+    display: block;
+    margin: 20px auto;
+}
+
+.Create-label {
+    margin: 20px auto;
+}
+
+.Create-input {
+    margin: 25px auto;
+}
+
+.Photo-message {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    border: solid 1px #204f61;;
+    background-color: #fff;
+}
+
+.Message-text-p {
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 768px)
+{
+    .Message-create-bloc {
+        width: 330px;
+    }
+
+    .Message-text-p {
+        margin-top: 40px;
+    }
+
+    .Comment-bloc {
+        width: 250px;
+    }
+
+    .Comment-create {
+        width: 330px;
+        font-size: 15px;
+    }
+
+    .Message-autor{
+        width: 170px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width: 1024px)
+{
+    .Create-discussion > .Submit-form {
+        display: block;
+        margin: 20px auto;
+    }
+}

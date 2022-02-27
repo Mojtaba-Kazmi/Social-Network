@@ -1,0 +1,70 @@
+.Discussion-text {
+   
+    color: #204f61;
+    text-align: center;
+    margin: 20px 20px;
+    
+}
+
+.Icon-color {
+    color: #E15333;
+}
+.Discussion-bloc-link {
+    margin: 20px auto;
+    width: 500px;
+    border:solid 1px #297269;
+    position: relative;
+}
+
+.Discussion-link {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px 0;
+    text-decoration: none;
+    color: #E53333;
+    font-weight: bold;
+}
+
+.Discussion-icon{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.Discussion-create-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Discussion-create-bloc {
+    
+    color: #204f61;
+    text-align: center;
+    width: 500px;
+    margin: 10px auto;
+}
+
+h2 {
+
+    color: #204f61;
+}
+
+.Submit-discussion {
+    display: block;
+    margin: 20px auto;
+}
+
+@media screen and (max-width: 768px)
+{
+    .Discussion-link {
+        width: 300px;
+    }
+
+    .Discussion-create-bloc {
+        width: 300px;
+    }
+
+    .Discussion-bloc-link {
+        width:300px;
+    }
+}
