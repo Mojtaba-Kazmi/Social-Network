@@ -10,7 +10,7 @@
 }
 
 .Profil-img{
-    border: solid 1px #204f61;;
+    border: solid 1px #0f2041;
     padding: 20px 20px;
     object-fit: cover;
     margin-left: 10px;
@@ -41,9 +41,9 @@
     display: block;
     margin: 20px auto;
     cursor: pointer;
-    border: solid 1px #204f61;;
+    border: solid 1px #0f2041;
     
-    background-color: #204f61;;
+    background-color: #0f2041;
     color: #fff;
     padding: 10px 20px;
     text-align: center;
@@ -53,8 +53,8 @@
 .Profil-delete {
     cursor: pointer;
     margin: 10px;
-    border: solid 1px #204f61;;
-    background-color: #204f61;;
+    border: solid 1px #0f2041;
+    background-color: #0f2041;
     color: #fff;
     padding: 15px;
     text-align: center;
@@ -63,15 +63,15 @@
 }
 
 .Profil-upload:focus {
-    border: solid 1px #204f61;;
+    border: solid 1px #0f2041;
     background-color: #fff;
-    color: #204f61;;
+    color: #0f2041;
 }
 
 .Profil-delete:focus {
-    border: solid 1px #204f61;;
+    border: solid 1px #0f2041;
     background-color: #fff;
-    color: #204f61;;
+    color: #0f2041;
 }
 
 @media screen and (max-width: 768px) 

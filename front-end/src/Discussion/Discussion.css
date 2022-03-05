@@ -1,18 +1,18 @@
 .Discussion-text {
    
-    color: #204f61;
+    color: #0f2041;
     text-align: center;
     margin: 20px 20px;
     
 }
 
 .Icon-color {
-    color: #E15333;
+    color: #c2595d;
 }
 .Discussion-bloc-link {
     margin: 20px auto;
     width: 500px;
-    border:solid 1px #297269;
+    border:solid 1px #0f2041;
     position: relative;
 }
 
@@ -21,7 +21,7 @@
     grid-template-columns: repeat(1, 1fr);
     padding: 20px 0;
     text-decoration: none;
-    color: #E53333;
+    color: #c2595d;
     font-weight: bold;
 }
 
@@ -38,7 +38,7 @@
 
 .Discussion-create-bloc {
     
-    color: #204f61;
+    color: #0f2041;
     text-align: center;
     width: 500px;
     margin: 10px auto;
@@ -46,7 +46,7 @@
 
 h2 {
 
-    color: #204f61;
+    color: #0f2041;
 }
 
 .Submit-discussion {

@@ -3,7 +3,7 @@
 }
 
 .Home-button {
-    background-color: #204f61;
+    background-color: #0f2041;
     color: #ffffff;
     line-height: 20px;
     margin: 20px 20px;
@@ -16,13 +16,13 @@
 
   .Home-button:focus {
     background-color: #fff;
-    color: #204f61;
-    border: solid 1px #204f61;
+    color: #0f2041;
+    border: solid 1px #0f2041;
    
   }
   
   h1 {
-    color: #297269;
+    color: #0f2041;
     margin: 110px;
   }
 

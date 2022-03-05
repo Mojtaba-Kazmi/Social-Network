@@ -33,7 +33,7 @@
 }
 
 .Submit-form {
-    background-color: #204f61;
+    background-color: #0f2041;
     color: #ffffff;
     margin: 20px 40px;
     padding: 10px 15px;
@@ -43,14 +43,14 @@
 
 .Submit-form:hover {
     background-color: #fff;
-    color: #E53333;
-    border: solid 2px #204f61;
+    color: #c2595d;
+    border: solid 2px #0f2041;
 }
 
 .Submit-form:focus {
     background-color: #fff;
-    color: #204f61;
-    border: solid 2px  #204f61;
+    color: #0f2041;
+    border: solid 2px  #0f2041;
 }
 
 @media screen and (max-width: 768px)

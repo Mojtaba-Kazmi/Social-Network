@@ -45,7 +45,7 @@ exports.deleteDiscussion = async (req, res, next) => {
   const isAdmin = req.userIsAdmin;
   const insertId = [id]
 
-  if (isAdmin === 1) {
+  if (isAdmin == 1) {
     //je récupère tous les id des messages de la discussion
     const messageIds = await queryDbb.selectMessageForDiscussionDelete(insertId);
 

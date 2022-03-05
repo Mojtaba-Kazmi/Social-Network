@@ -176,4 +176,8 @@ module.exports = {
     selectIdFromUser: function(insert) {
         return connection2.query('SELECT id FROM User WHERE id=?', insert);
     },
+
+    getUserById: function(userId) {
+        return connection2.query('SELECT * FROM User WHERE id=?', userId);
+    }
 }

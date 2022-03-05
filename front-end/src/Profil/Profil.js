@@ -99,7 +99,7 @@ class Profil extends Component {
             <div className="Page-bloc">
                 < Menu />
                 <div className="Profil">
-                    <h2>Mon profil</h2>
+                    <h2>My profile</h2>
                     <div className="Profil-bloc">
                         <div className="Profil-img">
                             <img src={photo} className="Photo-profil" alt="profil" />
@@ -109,11 +109,11 @@ class Profil extends Component {
                             </div>
                         </div>
                         <div className="Profil-text">
-                            <p className="Profil-p">Nom : {this.state.user.name}</p>
-                            <p className="Profil-p">Prénom : {this.state.user.firstName}</p>
+                            <p className="Profil-p">Last Name : {this.state.user.name}</p>
+                            <p className="Profil-p">First Name : {this.state.user.firstName}</p>
                         </div>
                     </div>
-                    <button className="Profil-delete" onClick={this.handleDeleteProfileClick}>Supprimer mon compte</button>
+                    <button className="Profil-delete" onClick={this.handleDeleteProfileClick}>Delete my account</button>
                 </div>
             </div>
         );

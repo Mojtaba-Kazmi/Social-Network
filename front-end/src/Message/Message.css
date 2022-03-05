@@ -1,6 +1,6 @@
 .Message-text {
-    border: solid 1px #204f61;
-    color: #204f61;
+    border: solid 1px #0f2041;;
+    color: #0f2041;
     text-align: center;
     margin: 20px 20px;
     padding: 20px 20px;
@@ -25,7 +25,7 @@
 }
 
 .Icon-bloc {
-    color: #204f61;
+    color: #0f2041;
     margin: 0px 10px;
 }
 
@@ -59,8 +59,8 @@
 }
 
 .Message-create-bloc {
-    border: solid 2px #204f61;
-    color: #204f61;
+    border: solid 2px #0f2041;
+    color: #0f2041;
     text-align: center;
     width: 500px;
     margin: 10px auto;
@@ -69,8 +69,8 @@
 
 .Comment-bloc {
     position: relative;
-    border: solid 1px #204f61;
-    color: #204f61;
+    border: solid 1px #0f2041;
+    color: #0f2041;
     text-align: center;
     width: 450px;
     margin: 20px 60px;
@@ -82,8 +82,8 @@
 }
 
 .Comment-create{
-    border: solid 2px #204f61;
-    color: #204f61;
+    border: solid 2px #0f2041;
+    color: #0f2041;
     width: 500px;
     text-align: center;
     margin: 20px auto;
@@ -116,7 +116,7 @@
     position: absolute;
     top: -15px;
     left: -15px;
-    border: solid 1px #204f61;;
+    border: solid 1px #0f2041;
     background-color: #fff;
 }
 
