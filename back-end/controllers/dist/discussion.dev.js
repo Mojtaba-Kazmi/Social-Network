@@ -367,7 +367,7 @@ exports.likeMessage = function _callee8(req, res, next) {
           messageId = req.body.message_id;
           date = new Date();
           insertFirst = [userId, messageId, date];
-          insertMessageId = [messageId];
+          insertMessageId = [userId, messageId];
           insertForDelete = [userId, messageId];
           _context8.next = 8;
           return regeneratorRuntime.awrap(queryDbb.messageUserLike(insertMessageId));
@@ -376,7 +376,7 @@ exports.likeMessage = function _callee8(req, res, next) {
           resultUser = _context8.sent;
           _context8.prev = 9;
 
-          if (!(resultUser.length > 0 && resultUser[0].user_id == userId)) {
+          if (!(resultUser.length > 0)) {
             _context8.next = 16;
             break;
           }

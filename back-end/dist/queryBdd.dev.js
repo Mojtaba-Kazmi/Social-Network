@@ -113,7 +113,7 @@ module.exports = {
   },
   //Selectionne l'id de l'utilisateur qui aime un message
   messageUserLike: function messageUserLike(insertMessageId) {
-    return connection2.query('SELECT user_id FROM Liked WHERE message_id = ?', insertMessageId);
+    return connection2.query('SELECT * FROM Liked WHERE Liked.user_id = ? AND Liked.message_id = ?', insertMessageId);
   },
   messageUserDislike: function messageUserDislike(insertForDelete) {
     return connection2.query('DELETE FROM Liked WHERE user_id=? AND message_id= ?', insertForDelete);

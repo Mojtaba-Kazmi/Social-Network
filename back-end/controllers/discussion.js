@@ -163,17 +163,21 @@ exports.likeMessage = async (req, res, next) => {
   const messageId = req.body.message_id;
   const date = new Date();
   const insertFirst = [userId, messageId, date];
-  const insertMessageId = [messageId];
+  const insertMessageId = [userId, messageId];
   const insertForDelete = [userId, messageId];
 
+
   const resultUser = await queryDbb.messageUserLike(insertMessageId);
+ 
   //on va vérifier si l'utilisateur a déjà aimé le message
   try {
       //Si l'utilisateur a déjà aimé le like, on le supprime de la base
-      if (resultUser.length > 0 && resultUser[0].user_id == userId) {
+      if (resultUser.length > 0 ) {
         await queryDbb.messageUserDislike(insertForDelete);
         return res.status(200).json({message: "Like supprimé de la base"});
-      } else {
+      }
+
+      else {
         //si non on l'ajoute à la base
         const result = await queryDbb.messageLike(insertFirst);
         return res.status(200).json(result);
