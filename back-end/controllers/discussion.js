@@ -172,7 +172,7 @@ exports.likeMessage = async (req, res, next) => {
   //on va vérifier si l'utilisateur a déjà aimé le message
   try {
       //Si l'utilisateur a déjà aimé le like, on le supprime de la base
-      if (resultUser.length > 0 ) {
+      if (resultUser.length > 0) {
         await queryDbb.messageUserDislike(insertForDelete);
         return res.status(200).json({message: "Like supprimé de la base"});
       }
@@ -226,6 +226,7 @@ exports.deleteComment = async (req, res, next) => {
   const insertCommentId = [commentId];
   
   const result = await queryDbb.commentSelectUserIdBeforeDelete(insertCommentId);
+  
   // On vérifie que l'utilisateur est celui qui a posté le commentaire ou qu'il est admin
   if (result[0].user_id != userId && isAdmin == 0) {
     return res.status(400).json({message: "Vous ne pouvez pas supprimer ce commentaire !"});

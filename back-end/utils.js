@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 module.exports = {
+    
     parseAuthorization: function(authorization) {
         return (authorization != null) ? authorization.replace('Bearer ', '') : null;
     },

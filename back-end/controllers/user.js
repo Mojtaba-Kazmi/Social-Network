@@ -41,6 +41,7 @@ exports.signup = async (req, res, next) =>  {
     const insertEMail = [email];
     
     const resultUser = await queryDbb.userEmailUnique(insertEMail);
+    
     try {
         if(resultUser.length>0) {
             if (resultUser[0].email == email) {
