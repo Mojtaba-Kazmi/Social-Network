@@ -11,7 +11,7 @@ exports.createDiscussion = async (req, res, next) => {
   try {
     return res.status(200).json(result);
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };
 
@@ -22,7 +22,7 @@ exports.getAllDiscussion = async (req, res, next) => {
   try {
     return res.status(200).json(result);
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };
 
@@ -35,7 +35,7 @@ exports.getOneDiscussion = async (req, res, next) => {
   try {
     return res.status(200).json(result);
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };
 
@@ -65,7 +65,7 @@ exports.deleteDiscussion = async (req, res, next) => {
         await queryDbb.discussionDeleteMessage(insertId);
         await queryDbb.discussionDelete(insertId);
       } catch ( err ) {
-        return res.status(500).json({ error: "mysql" });
+        return res.status(500).json({ error: "mysql2" });
       }
     }
 
@@ -96,7 +96,7 @@ exports.createMessage = async (req, res, next) => {
   try {
     return res.status(200).json(result);
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };
 
@@ -152,7 +152,7 @@ exports.deleteMessage = async (req, res, next) => {
 
     return res.status(200).json({"message": "Message supprimé"});
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
     
 };
@@ -183,7 +183,7 @@ exports.likeMessage = async (req, res, next) => {
         return res.status(200).json(result);
       }
   } catch ( err ) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 }
 
@@ -200,7 +200,7 @@ exports.commentMessage = async (req, res, next) => {
   try {
     return res.status(200).json(result);
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };
 
@@ -214,7 +214,7 @@ exports.getComment = async (req, res, next) => {
   try {
     return res.status(200).json(result);
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };
 
@@ -235,6 +235,6 @@ exports.deleteComment = async (req, res, next) => {
     await queryDbb.commentDeleteCommentId(insertCommentId);
     return res.status(200).json({message: "Commentaire supprimé"});
   } catch (err) {
-    return res.status(500).json({ error: "mysql" });
+    return res.status(500).json({ error: "mysql2" });
   }
 };

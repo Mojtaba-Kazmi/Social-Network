@@ -61,7 +61,7 @@ exports.signup = async (req, res, next) =>  {
             .catch(error => res.status(500).json({ error }));
         }
     } catch (err) {
-        return res.status(500).json({error: "mysql"}); 
+        return res.status(500).json({error: "mysql2"}); 
     }
     
 };
@@ -99,7 +99,7 @@ exports.login = async (req, res, next) => {
             return res.status(401).json({error: 'Utilisateur non trouvé !'});
         }
     } catch (err) {
-        return res.status(500).json({error: "mysql"});
+        return res.status(500).json({error: "mysql2"});
     }
 };  
 
@@ -116,7 +116,7 @@ exports.getProfil = async (req, res, next) => {
             return res.status(200).json(result[0]);
         }
     } catch (err) {
-        return res.status(500).json({error: "mysql"});
+        return res.status(500).json({error: "mysql2"});
     }
 }
 
@@ -140,7 +140,7 @@ exports.updateProfil = async (req, res, next) => {
     try {
         return res.status(200).json({message:'photo mise à jour'});
     } catch (err) {
-        return res.status(500).json({error: "mysql"});
+        return res.status(500).json({error: "mysql2"});
     }
 }
 
@@ -176,6 +176,6 @@ exports.deleteProfil = async (req, res, next) => {
     await queryDbb.userDelete(insert);
     return res.status(200).json('Profil supprimé');
     } catch (err) {
-    return res.status(500).json({error: "mysql1"});
+    return res.status(500).json({error: "mysql2"});
     }
 }

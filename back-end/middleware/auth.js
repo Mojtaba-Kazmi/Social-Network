@@ -36,7 +36,7 @@ module.exports = async (req, res, next) => {
             return res.status(400).json({error: 'l\'utilisateur n\'existe pas.'});
           } 
         } catch (err) {
-          return res.status(500).json({error: "mysql"});
+          return res.status(500).json({error: "mysql2"});
         }
         
 
