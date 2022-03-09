@@ -63,8 +63,8 @@ module.exports = {
     },
 
     // supression d'une discussion
-    discussionDelete: function(insertId) {
-        return connection2.query('DELETE FROM Discussion WHERE id=?', insertId);
+    discussionDelete: function(deleteId) {
+        return connection2.query('DELETE FROM Discussion WHERE id=?', deleteId);
     },
 
     //création d'un message

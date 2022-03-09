@@ -41,40 +41,51 @@ exports.getOneDiscussion = async (req, res, next) => {
 
 //suppression d'une discussion 
 exports.deleteDiscussion = async (req, res, next) => {
+
   const id = req.params.id;
+  const userId = req.user;
   const isAdmin = req.userIsAdmin;
-  const insertId = [id]
+  const title = req.body.title;
+  const insertId = [id];
+  const deleteId = [id,userId];
+  
 
   if (isAdmin == 1) {
+    
     //je récupère tous les id des messages de la discussion
     const messageIds = await queryDbb.selectMessageForDiscussionDelete(insertId);
 
     for (let i = 0; i < messageIds.length; i++) {
+ 
       const insert = [messageIds[i].id];
-
+     
       let queryStringFindFile = await queryDbb.fileFind(insert);
 
       if (queryStringFindFile[0].file !== null) {
         const filename = queryStringFindFile[0].file.split('/images/')[1];
         fs.unlinkSync(`./images/${filename}`);
       }
-
+    
       try {
+
         await queryDbb.commentDeleteMessageId(insert);
         await queryDbb.discussionDeleteLikeMessage(insert);
         await queryDbb.discussionDeleteMessage(insertId);
-        await queryDbb.discussionDelete(insertId);
+        await queryDbb.discussionDelete(deleteId);
+        
       } catch ( err ) {
         return res.status(500).json({ error: "mysql2" });
       }
     }
-
+    
+    const dltEmptyDiscussion = await queryDbb.discussionDelete(deleteId);
     return res.status(200).json("Discussion supprimée");
 
   } else {
     //Si l'utilisateur n'est pas admin
     return res.status(400).json({error: "Vous n'êtes pas autorisé à supprimer cette discussion"});
   }
+    
 };
 
 //création d'un message

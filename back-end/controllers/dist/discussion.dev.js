@@ -101,38 +101,41 @@ exports.getOneDiscussion = function _callee3(req, res, next) {
 
 
 exports.deleteDiscussion = function _callee4(req, res, next) {
-  var id, isAdmin, insertId, messageIds, i, insert, queryStringFindFile, filename;
+  var id, userId, isAdmin, title, insertId, deleteId, messageIds, i, insert, queryStringFindFile, filename, dltEmptyDiscussion;
   return regeneratorRuntime.async(function _callee4$(_context4) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
           id = req.params.id;
+          userId = req.user;
           isAdmin = req.userIsAdmin;
+          title = req.body.title;
           insertId = [id];
+          deleteId = [id, userId];
 
           if (!(isAdmin == 1)) {
+            _context4.next = 40;
+            break;
+          }
+
+          _context4.next = 9;
+          return regeneratorRuntime.awrap(queryDbb.selectMessageForDiscussionDelete(insertId));
+
+        case 9:
+          messageIds = _context4.sent;
+          i = 0;
+
+        case 11:
+          if (!(i < messageIds.length)) {
             _context4.next = 34;
             break;
           }
 
-          _context4.next = 6;
-          return regeneratorRuntime.awrap(queryDbb.selectMessageForDiscussionDelete(insertId));
-
-        case 6:
-          messageIds = _context4.sent;
-          i = 0;
-
-        case 8:
-          if (!(i < messageIds.length)) {
-            _context4.next = 31;
-            break;
-          }
-
           insert = [messageIds[i].id];
-          _context4.next = 12;
+          _context4.next = 15;
           return regeneratorRuntime.awrap(queryDbb.fileFind(insert));
 
-        case 12:
+        case 15:
           queryStringFindFile = _context4.sent;
 
           if (queryStringFindFile[0].file !== null) {
@@ -140,52 +143,57 @@ exports.deleteDiscussion = function _callee4(req, res, next) {
             fs.unlinkSync("./images/".concat(filename));
           }
 
-          _context4.prev = 14;
-          _context4.next = 17;
+          _context4.prev = 17;
+          _context4.next = 20;
           return regeneratorRuntime.awrap(queryDbb.commentDeleteMessageId(insert));
 
-        case 17:
-          _context4.next = 19;
+        case 20:
+          _context4.next = 22;
           return regeneratorRuntime.awrap(queryDbb.discussionDeleteLikeMessage(insert));
 
-        case 19:
-          _context4.next = 21;
+        case 22:
+          _context4.next = 24;
           return regeneratorRuntime.awrap(queryDbb.discussionDeleteMessage(insertId));
 
-        case 21:
-          _context4.next = 23;
-          return regeneratorRuntime.awrap(queryDbb.discussionDelete(insertId));
+        case 24:
+          _context4.next = 26;
+          return regeneratorRuntime.awrap(queryDbb.discussionDelete(deleteId));
 
-        case 23:
-          _context4.next = 28;
+        case 26:
+          _context4.next = 31;
           break;
 
-        case 25:
-          _context4.prev = 25;
-          _context4.t0 = _context4["catch"](14);
+        case 28:
+          _context4.prev = 28;
+          _context4.t0 = _context4["catch"](17);
           return _context4.abrupt("return", res.status(500).json({
             error: "mysql2"
           }));
 
-        case 28:
+        case 31:
           i++;
-          _context4.next = 8;
+          _context4.next = 11;
           break;
 
-        case 31:
+        case 34:
+          _context4.next = 36;
+          return regeneratorRuntime.awrap(queryDbb.discussionDelete(deleteId));
+
+        case 36:
+          dltEmptyDiscussion = _context4.sent;
           return _context4.abrupt("return", res.status(200).json("Discussion supprimée"));
 
-        case 34:
+        case 40:
           return _context4.abrupt("return", res.status(400).json({
             error: "Vous n'êtes pas autorisé à supprimer cette discussion"
           }));
 
-        case 35:
+        case 41:
         case "end":
           return _context4.stop();
       }
     }
-  }, null, null, [[14, 25]]);
+  }, null, null, [[17, 28]]);
 }; //création d'un message
 
 
