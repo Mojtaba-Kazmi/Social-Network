@@ -5,7 +5,7 @@
 1. npm install ou npm i
 2. npm run start ou npm start
   
-**Backend fonctionne sur localhost 5000, Utiliser les commandes ci-dessous pour faire marcher le back-end**
+**Backend fonctionne sur localhost 5000, Utiliser les commandes ci-dessous pour faire marcher le back-end:**
 
   1. créer une base de données mysql à l'aide du fichier groupomania.sql 
   2. créer un fichier .env dans le dossier back-end dans lequel mettre : 
