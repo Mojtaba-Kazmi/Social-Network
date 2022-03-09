@@ -1,4 +1,4 @@
-# KAZMISaidMojtaba_07_20022022
+# Projet 07 Groupomania " un réseau social interne, moderne et ludique "
 
 **Front-end fonctionne sur localhost 3000, Pour le lancer utiliser les commandes ci-dessous:** 
 
