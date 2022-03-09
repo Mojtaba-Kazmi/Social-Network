@@ -13,7 +13,7 @@
 - DB_HOST = (ex. localhost)
 - DB_USER = votre identifiant
 - DB_PASS = votre mot de passe
-- DB_NAME = nom de la base de donnees
+- DB_NAME = le nom de votre base de donnees
 
   3. dans le dossier backend : 
 - npm install ou npm i
