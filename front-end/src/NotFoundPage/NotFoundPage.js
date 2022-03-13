@@ -6,6 +6,7 @@ import Navbar from '../Navbar/Navbar';
 
 
 class NotFoundPage extends React.Component{
+  
     render(){
         
         return <><Navbar /> <div className='NFound'>

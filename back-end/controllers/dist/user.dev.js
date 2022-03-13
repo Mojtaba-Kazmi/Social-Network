@@ -7,7 +7,11 @@ var bcrypt = require('bcrypt');
 
 var jwt = require('jsonwebtoken');
 
-var queryDbb = require('../queryBdd'); //Constant
+var queryDbb = require('../queryBdd');
+
+var cryptoJS = require("crypto-js");
+
+require('dotenv').config(); //Constant
 
 
 var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

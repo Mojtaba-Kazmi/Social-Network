@@ -100,7 +100,6 @@ class Profil extends Component {
         }
         return (
             <>
-           
             <div className="Page-bloc">
             < Menu />
                 <div className="Profil">

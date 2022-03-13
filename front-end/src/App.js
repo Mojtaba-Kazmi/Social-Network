@@ -6,12 +6,8 @@ import Profil from './Profil/Profil.js';
 import Discussion from './Discussion/Discussion.js';
 import Message from './Message/Message.js';
 import Home from './Home/Home';
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
-
-import './App.css';
-
-
 
 function App() {
 
