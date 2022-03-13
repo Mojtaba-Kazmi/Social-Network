@@ -1,6 +1,7 @@
 import React from 'react';
 import './Inscription.css'
 import { Redirect } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar';
 
 class Inscription extends React.Component {
     constructor(props) {
@@ -100,26 +101,32 @@ class Inscription extends React.Component {
             return <Redirect to='/Connexion' />
         }
         return (
-            <div className="Inscription">
-                <h2> Create New Account</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="Inscription-form" >
-                        <label className="Inscription-label" htmlFor="nom">Last Name* : </label>
-                        <input className="Inscription-input" type="text" id="nom" value={this.state.name} onChange={this.handleNameChange} placeholder="Alex" />
-                        <label className="Inscription-label" htmlFor="prenom">First Name* : </label>
-                        <input className="Inscription-input" type="text" id="prenom" value={this.state.firstName} onChange={this.handleFirstNameChange} placeholder="Clement" />
-                        <label className="Inscription-label" htmlFor="email">Email* : </label>
-                        <input className="Inscription-input" type="email" id="email" value={this.state.email} onChange={this.handleEmailChange} placeholder="alex.clement@mail.com" />
-                        <label className="Inscription-label" htmlFor="password">Password* : </label>
-                        <input className="Inscription-input" type="password" id="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="between 4 and 8 caracters, 1 capital, 1 lowercase , 1 number" />
-                        <label className="Inscription-label" htmlFor="avatar">Profile Photo** : </label>
-                        <input className="Inscription-file" type="file" id="avatar" accept="image/png, image/jpeg" onChange={this.handleFileChange} />
-                        <p className="Inscription-request">* : Required Field</p>
-                        <p className="Inscription-request">** : File Accepted : .jpeg et .png</p>
-                    </div>
-                    <input className="Inscription-input Submit-form" type="submit" value="Submit" />
+                <>
+                <Navbar />
+                <div className="bg-img">
+                <form className='container' onSubmit={this.handleSubmit}>
+                     <h2> Register</h2>
+                     <br/>
+                     <label htmlFor="nom">Last Name*   </label>
+                     <input type="text" id="nom" value={this.state.name} onChange={this.handleNameChange} placeholder="Alex"/>
+                     <label htmlFor="prenom">First Name*   </label>
+                     <input type="text" id="prenom" value={this.state.firstName} onChange={this.handleFirstNameChange} placeholder="Clement" />
+                     <label htmlFor="email">Email*   </label>
+                     <input type="email" id="email" value={this.state.email} onChange={this.handleEmailChange} placeholder="alex.clement@mail.com"/>
+                     <label htmlFor="password">Password*  </label>
+                     <input type="password" id="password" value={this.state.password} onChange={this.handlePasswordChange} placeholder="between 4 and 8 caracters, 1 capital, 1 lowercase , 1 number"/>
+                     <label htmlFor="avatar">Profile Photo** </label>
+                     <input type="file" id="avatar" accept="image/png, image/jpeg" onChange={this.handleFileChange}/>
+                     <br/>
+                     <br/>
+                     <p>*Required Field</p>
+                     <br/>
+                     <p>**File Accepted : .jpeg, .jpg, gif et .png</p>
+                     <br/>
+                    <input className="btn" type="submit" value="Register" />
                 </form>
-            </div>
+                </div>
+             </>
         );
     }
 }

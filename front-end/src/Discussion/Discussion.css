@@ -52,6 +52,11 @@ h2 {
 .Submit-discussion {
     display: block;
     margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0f2041;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px)

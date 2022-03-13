@@ -1,18 +1,40 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-
+import React, { Component} from 'react';
 import './Home.css'
+import Navbar from '../Navbar/Navbar';
 
-class Home extends Component {
+class Layout extends Component {
     render() {
         return (
-            <div className="Body">
-                <h1> Groupomania Social Network</h1>
-                <Link className='Home-button' to={'/Inscription'}>Sign up</Link>
-                <Link className='Home-button' to={'/Connexion'}>Sign in</Link>
+          <>
+            <Navbar />
+            <div className="bg-img">
+                <span className='center' aria-label={this.props.copy} role={this.props.role}>
+          {this.props.copy.split("").map(function(char, index){
+            let style = {"animationDelay": (0.5 + index / 10) + "s"}
+            return <span
+              aria-hidden="true"
+              key={index}
+              style={style}>
+              {char}
+            </span>;
+          })}
+        </span>
             </div>
+            </>
         );
     }
+}
+
+class Home extends Component {
+
+  render() {
+    return(
+  
+         
+         <h1><Layout copy="Groupomania Réseau Social" role="heading" /></h1>
+
+    );
+  }
 }
 
 export default Home;

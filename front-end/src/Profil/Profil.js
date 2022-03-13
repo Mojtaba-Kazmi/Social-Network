@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import Cookies from 'universal-cookie';
 import './Profil.css'
 import photoProfil from './bonhomme.png'
-import { Redirect } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import Menu from '../Menu/Menu.js'
+
 
 import { getProfile, deleteProfile, putProfile } from '../Api.js'
 
@@ -75,6 +76,7 @@ class Profil extends Component {
         }
 
         deleteProfile(id, data)
+
             .then(() => {
                 cookies.remove('token');
                 cookies.remove('userId');
@@ -83,6 +85,7 @@ class Profil extends Component {
             }).catch(err => {
                 console.log('err', err);
                 alert("Serveur non disponible");
+                
             })
     }
 
@@ -96,9 +99,14 @@ class Profil extends Component {
             photo = this.state.user.photo;
         }
         return (
+            <>
+           
             <div className="Page-bloc">
-                < Menu />
+            < Menu />
                 <div className="Profil">
+                    <br />
+                    <br />
+                    <br />
                     <h2>My profile</h2>
                     <div className="Profil-bloc">
                         <div className="Profil-img">
@@ -113,11 +121,13 @@ class Profil extends Component {
                             <p className="Profil-p">First Name : {this.state.user.firstName}</p>
                         </div>
                     </div>
-                    <button className="Profil-delete" onClick={this.handleDeleteProfileClick}>Delete my account</button>
+                    <button className="Profil-delete" onClick={this.handleDeleteProfileClick}>Delete your account</button>
                 </div>
             </div>
+            </> 
+            
         );
     }
 }
 
-export default Profil;
+export default withRouter(Profil);

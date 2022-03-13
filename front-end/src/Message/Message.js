@@ -288,7 +288,7 @@ class Message extends Component {
                     <form className="Create-discussion" onSubmit={this.handleCommentSubmit}>
                         <label className="Create-label" htmlFor="title">Reply : {this.state.name} {this.state.firstName}</label>
                         <textarea rows={5} cols={30} className="Create-input" id="title" onChange={this.handleCommentChange} />
-                        <input className="Inscription-input Submit-form Submit-comment" type="submit" value="Envoyer" />
+                        <input className="Inscription-input Submit-form Submit-comment" type="submit" value="Post" />
                     </form>
                 </div>
             )
@@ -314,10 +314,14 @@ class Message extends Component {
         }
 
         return (
+            <>
+            
             <div className="Page-bloc">
                 <Menu />
                 <div>
-
+                    <br />
+                    <br />
+                    <br />
                     <h2>Discussion : {this.state.discussion.title}</h2>
 
                     <div className="Message-bloc">
@@ -333,7 +337,7 @@ class Message extends Component {
                                             <p className="Icon-bloc Icon2">{message.nbLike}</p><FontAwesomeIcon className="Icon-bloc Icon1" onClick={(e) => this.handleLikeClick(message.id, e)} icon={faHeart} />
                                             <FontAwesomeIcon className="Icon-bloc Icon3" onClick={() => this.handleCommentClick(message.id, message.name, message.firstName)} icon={faPen} />
                                             <FontAwesomeIcon className="Icon-bloc Icon4" onClick={(e) => this.handleDeleteClick(message.id, e)} icon={faTrash} />
-                                            <div className="Comment-affich" onClick={() => this.handleCommentAffichClick(message.id)}>Display the comments</div>
+                                            <div className="Comment-affich" onClick={() => this.handleCommentAffichClick(message.id)}>View comments</div>
                                         </div>
                                         {message.id === this.state.messageId ? comment : null}
                                     </div>
@@ -346,7 +350,7 @@ class Message extends Component {
                                     <label className="Create-label" htmlFor="title">Your message : </label>
                                     <input className="Create-input" type="text" id="title" value={this.state.message} onChange={this.handleMessageChange} />
                                     <input className="Profil-modif" type="file" accept="image/png, image/jpeg, image/gif" ref={ref => this.fileInput = ref} onChange={this.handleFileChange} />
-                                    <input className="Inscription-input Submit-form Submit-message" type="submit" value="Send" />
+                                    <input className="Inscription-input Submit-form Submit-message" type="submit" value="Post" />
                                 </form>
                             </div>
                         </div>
@@ -354,6 +358,7 @@ class Message extends Component {
                 </div>
 
             </div>
+         </>
         );
     }
 }

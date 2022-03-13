@@ -100,10 +100,15 @@ class Discussion extends Component {
 
     render() {
         return (
+            <>
+           
             <div className="Page-bloc">
-                <Menu />
+            <Menu />
                 <div>
-                    <h2>Current Discussions</h2>
+                    <br />
+                    <br />
+                    <br />
+                 <h2> Discussion lists</h2>
                     <div className="Discussion-bloc">
                         <div className="Discussion-text">
                             {this.state.discussions.map((discussion, i) => (
@@ -125,6 +130,7 @@ class Discussion extends Component {
                     </div>
                 </div>
             </div>
+          </>
         );
     }
 }

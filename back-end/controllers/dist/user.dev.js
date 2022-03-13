@@ -171,7 +171,7 @@ exports.login = function _callee3(req, res, next) {
                   userId: result[0].id,
                   isAdmin: result[0].isAdmin
                 }, 'RANDOM_TOKEN_SECRET', {
-                  expiresIn: '1h'
+                  expiresIn: '24h'
                 })
               });
             }

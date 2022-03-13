@@ -1,8 +1,9 @@
 import React from 'react';
 import './Connexion.css'
-
 import { Redirect } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import Navbar from '../Navbar/Navbar';
+
 
 const cookies = new Cookies();
 
@@ -58,11 +59,12 @@ class Connexion extends React.Component {
         }).then((data) => {
             cookies.set('token', data.token, { path: '/' });
             cookies.set('userId', data.userId, { path: '/' });
-            
+    
             this.setState({ redirection: true });
         }).catch(err => {
             console.log('err', err);
             alert(err.error);
+            
         })
     }
 
@@ -72,13 +74,20 @@ class Connexion extends React.Component {
             return <Redirect to='/Profil' />;
         }
         return (
-            <form className="Connect-form" onSubmit={this.handleSubmit}>
-                <label className="Inscription-label" htmlFor="email">Email : </label>
-                <input className="Inscription-input" type="email" id="email" value={this.state.value} onChange={this.handleEmailChange} />
-                <label className="Inscription-label" htmlFor="pass">Password : </label>
-                <input className="Inscription-input" type="password" id="pass" value={this.state.value} onChange={this.handlePasswordChange} />
-                <input className="Inscription-input Submit-form" type="submit" value="Log In" />
+            <>
+            <Navbar />
+            <div className="bg-img">
+            <form className="container" onSubmit={this.handleSubmit}>
+                <h2> Log In</h2>
+                <br/>
+                <label htmlFor="email">Email : </label>
+                <input type="email" id="email" value={this.state.value} onChange={this.handleEmailChange} />
+                <label htmlFor="pass">Password : </label>
+                <input type="password" id="pass" value={this.state.value} onChange={this.handlePasswordChange} />
+                <input className="btn" type="submit" value="Log In" />
             </form>
+            </div>
+            </>
         );
     }
 }

@@ -31,8 +31,12 @@ class Menu extends Component {
             return <Redirect to='/' />;
         }
         return (
+
             <div className="Page-bloc">
                 <div className="Menu-bloc">
+                    <br />
+                    <br />
+                    <br />
                     <p className="Menu-title">Menu</p>
                     <div className="Menu-iconLink">
                         <FontAwesomeIcon className="" icon={faComments} />
@@ -43,7 +47,7 @@ class Menu extends Component {
                         <Link className="Menu-link" to="/Profil/">My Profile</Link>
                     </div>
                     <div className="Menu-button">
-                        <button className="Menu-logout" onClick={this.handleLogoutClick} >Log Out</button>
+                        <button className="Menu-logout" onClick={this.handleLogoutClick} >Log out</button>
                     </div>
 
                 </div>

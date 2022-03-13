@@ -68,17 +68,21 @@
 }
 
 .Comment-bloc {
+
     position: relative;
     border: solid 1px #0f2041;
     color: #0f2041;
-    text-align: center;
-    width: 450px;
+    text-align: left;
+    word-wrap: break-word;
+    width: 550px;
     margin: 20px 60px;
-    padding: 20px 20px;
+    padding: 50px 50px;
+
 }
 
 .Comment-affich {
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .Comment-create{
@@ -92,12 +96,22 @@
 
 .Submit-comment {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0f2041;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .Submit-message {
     display: block;
     margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #0f2041;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .Create-label {
@@ -122,6 +136,7 @@
 
 .Message-text-p {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 768px)
